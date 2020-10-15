@@ -1,0 +1,24 @@
+<img [src]="details.image"/>
+<div class="detail">
+<div>
+ <label>Product Name : </label>
+ <label>{{details.name | uppercase}}</label> 
+</div>
+<div>
+  <label>Unit Price : </label>
+  <label>{{details.unitPrice}}</label>
+</div>
+<div>
+  <label>Quantity : </label>
+  <select [(ngModel)]="details.quantity">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+  </select>
+</div>
+<div>
+  <label>Final Price:</label>
+  <label>{{details.price}}</label>
+</div>
+</div>

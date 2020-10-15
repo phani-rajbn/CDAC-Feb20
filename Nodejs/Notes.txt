@@ -1,0 +1,34 @@
+Nodejs Training:
+Nodejs is basically running JS out of browser. It means that U can run JS code in a Command prompt or a server and make it behave like a server side app. 
+Its a platform built on Chrome's JS Engine(V8 Engine). JS internally runs on a browser's JS Engine called Chrome. U could install the Nodejs in ur machine of any platform and still work on it. U can open the Nodejs thro a cmd prompt or terminal and start executing the scripts thro it.
+It is basically Server side JS Framework. It uses the module system where U export UR code thro Modules and other Applications will import that module in their programs and use them. 
+Created by Ryan Dyal in 2009. It is support by a company called Joyant Technologies. 
+Nodejs is opensource and can be installed in UR machine from www.nodejs.org.
+Node can be executed from the Cmd using a cmd called node. 
+nodejs should be used by linux users. 
+Nodejs has REPL Feature: Read, Evaluate, print loop which will the users to enter data, the system reads the inputs, evaluates it and prints it and will continue in the loop. 
+JS is a light weight language which is also very powerfull.  So this power has a limitation. It cannot have IO operations. U cannot save data to a file or to a database using plain JS. It is a client side scripting language whose intention was to provide scripts to be executed in the browser. 
+With nodejs, that(IO feature) feature is now acquired with NODEJS. It means that U can write JS code for server side programming.  From now on, U will have JS on both client side as well as server side. The data transfer will also happen thro JSON, which is the JS based data interchange format. UR database will also be JS based capability without a need of any SQL based db. No-SQL(Not only SQL) is the new trend in Databases where the data is stored as JSON collections using databases like Mongodb and many others. 
+Everything can now be worked on JS:Client side, server side, database as well as the data interachanging feature
+Nodejs provides an Event driven and asynchronous platform for server side JS. It means that UR App will be event based and is single threaded Application. Functions are invoked in an asynchronous manner without waiting for the results of the function to come. Application will be in execution mode. 
+Nodejs brings event driven programming model as well as non-blocking UI handling like how a browser does.
+Nodejs is now applied on Web Apps, IoT, AI, Smart devices where the hardware is very limited. Nodejs being a light weight library, U can install it on a small hardware device with any basic OS and make it work. Consider a Raspberry PI2  to have a basic unix os and have nodejs installed to process requests thro a internet capability or a sensor installed in it. The sensor will give the inputs and nodejs will process it and Raspberry PI connected to a monitor will display the results like a Smart TV. 
+
+
+Points:
+require is used to acquire other JS files into the current file. 
+console.log is used to print the text on the Console. 
+Nodejs does not have any API to take inputs from the user.
+Functions that U create in js file are global functions, it means any file can access  it if it acquires the file thro require command. 
+PS: Its is not good to pollute the global space. 
+Instead create the functions inside a module and export that module to other JS Applications. 
+module.exports: is the way of exporting a module in Nodejs. Its shorter form is exports. module.exports = exports. 
+
+Using fs module:
+Every function in fs has sync and async version. Preferably use the async version. async will not block the execcution of the code as the function is invoked asynchronously and will execute the next line of the program without waiting for the function to return. This is the feature of Nodejs that makes it fast and powerfull. 
+
+
+GET vs. POST in sending data to the server:
+With HTTPGET, the data will sent to the server thro the URL in the form of Querystring. The Querystring is a key-value pairs each seperated by & after the ? of the url. Any user can view the data sent thro the Querystring. It can be modified and can even be viewed from the HISTORY of the Browser. 
+POST is a secured way of sending info as the data will be sent thro body of the REQUEST. So Users cannot see the data. It cannot be modified so easily. POST is sent thro the FORM's method called POST. 
+As the data is sent thro the URL in GET, U should parse the URL to extract the Querystring and convert it into an object and use it in ur application. 

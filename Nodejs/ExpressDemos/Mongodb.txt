@@ -1,0 +1,19 @@
+Mongodb is an open source No SQL database where the data is stored in the form of JS objects. Here the database does not have any schema, it stores as it is. There is no need to create a table for a database and insert data in it. 
+U should the database in the Mongodb Server, U should add a collection. Collection is similar to table of UR SQL Databases. Every collection will contain documents. Here Documents can be related as rows.
+Why Mongodb?
+Mongodb is light weight, stores the data as JS objects, easy to convert them to JSON and transfer data thro REST services. It does have schema based development, so there is no need to worry about the table structure. 
+{"empId: 123} and {"empID": 234} are different and will not have problems while inserting the record. Each record in Mongodb is called as document. A document contains the data in the form of key-value pairs like the way U see in JS objects. The data is stored as JS object.
+Some of the important commands:
+U should set the Environment variables of UR machine by name called Path to this bin directory of the Mongodb. While setting the Environment variables, U should not open the terminal. 
+To start the Mongodb CLI : mongo
+To show all databases: show dbs.
+To create a database: use databasename
+To create a collection: db.createCollection("collectionName")
+db.collectionName.insert({});->Creates a new collection and adds document into it. 
+To display all the collections of the selected db : show collections.
+
+CRUD operations:
+Insert a record: db.collectionName.insert({}); U can also insert multiple records using insert by creating a JS Array and fill the data into it and pass the array as arg into the insert method...
+Insert multiple records: db.collectionName.insertMany([{},{},{}]);
+find a record: db.collectionName.find()
+find can take JS object as arg which tells on what data U want to find.

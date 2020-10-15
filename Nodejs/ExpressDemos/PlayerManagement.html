@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .nav{
+            float: left;
+            height: 1000px;
+            margin-left:20px;
+            background-color: green;
+            color:darkslategray;
+            width:200px;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            background-color: green;
+            color:yellowgreen;
+            padding: 30px;
+            margin: 20px;
+        }
+        li, a{
+            display: block;
+            width: 100px;
+            height: 50px;
+            color :yellow;
+            text-align:center;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            background-color: blueviolet;
+        }
+        div{
+            width:65%;
+            background-color: lightgreen;
+            color:darkgreen;
+            border:1px solid green;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+            margin-left : 250px;
+            text-align: center; 
+        }
+    </style>
+    <title>Document</title>
+    <script>
+        const url = "http://localhost:1234/Players";
+        function populate(){
+            $.get(url, (data)=>{
+                $("table").find("tr:gt(0)").remove();
+                $.each(data, (index, element)=>{
+                    let row = `<tr><td>${element.playerId}</td><td>${element.name}</td>`
+                    row +=  `<td>${element.sport}</td><td>${element.NoOfCaps}</td><td><a myid=${element.playerId} class="cstLink" href="#">Edit</a></td></tr>`;
+                    $("table").append(row);
+                    $(".cstLink").click(function(){
+                        let pid = $(this).attr("myid");
+                        const myUrl = url + "/" + pid;
+                        $.get(myUrl, (data)=>{
+                            let pl = data[0];//first and only element in the array....
+                        })
+                    })       
+                })
+            })
+        }
+        $(document).ready(()=>{
+            $("div:gt(0)").hide(2000);
+            $("a:eq(0)").click(()=>{
+                $("div:gt(0)").hide(2000);
+                $("div:eq(1)").show(2000);
+                
+                
+                populate();
+            })
+            
+            
+            $("a:eq(1)").click(()=>{                
+                $("div:gt(0)").hide(2000);
+                $("div:eq(2)").show(2000);
+                $("#btnAdd").click(()=>{
+                    let obj = {};
+                    obj.playerId = $("#txtid").val();
+                    obj.name = $("#txtname").val();
+                    obj.sport = $("#txtsport").val();
+                    obj.NoOfCaps = $("#txtcaps").val();
+
+                    $.post(url, obj, (msg)=>{
+                        alert(msg);
+                        $("div:gt(0)").hide(2000);
+                    })
+                })
+            })
+        })      
+    </script>
+</head>
+<body>
+    <h1>Player Dashboard</h1>
+    <hr>
+    <div class="nav">
+        <ul type="none">
+            <li><a href="#">All Players</a></li>
+            <li><a href="#">Add New Player</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </div>
+    <div>
+       <h2 style="text-align: center;">Details of the Area</h2> 
+       <table border="1" width= "85%" style="margin-left: 35px">
+            <tr>
+                <th>Sl no.</th>
+                <th>Name</th>
+                <th>Sport</th>
+                <th>No of Caps</th>
+                <th>Options</th>
+            </tr>
+       </table>
+    </div>
+    <div>
+        <h2>Player details to Add</h2>
+        <p>
+            <input type="text" id="txtid" placeholder="Player ID">
+        </p>
+        <p>
+            <input type="text" id="txtname" placeholder="Player Name">
+        </p>
+        <p>
+            <input type="text" id="txtsport" placeholder="Player Sport">
+        </p>
+        <p>
+            <input type="text" id="txtcaps" placeholder="No of caps for the country">
+        </p>
+        <p>
+            <button id="btnAdd">Save Record</button>
+        </p>
+
+    </div>
+</body>
+</html>

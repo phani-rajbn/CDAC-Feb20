@@ -1,0 +1,15 @@
+<div>
+<h2>Math Calculator</h2>
+<hr>
+<p><input type="number" [(ngModel)] = "firstValue"/></p>
+<p><input type="number" [(ngModel)] = "secondValue"/></p>
+<p><select [(ngModel)] = "operand">
+        <option>+</option>
+        <option>-</option>
+        <option>X</option>
+        <option>-</option>
+    </select>
+</p>
+<p><button (click) = "process()">Get Result</button></p>
+The Result: <span>{{result}}</span>
+</div>

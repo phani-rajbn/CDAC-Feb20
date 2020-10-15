@@ -1,0 +1,17 @@
+Express is an additional package available in Nodejs which is used for creating rich internet applications with little or less effort. Consider this as a framework which will help in developing nodejs web apps in a rapid manner. 
+Express is based on HTTP only. Express overlaps the HTTP module. 
+Modules that are provided by Nodejs will help in developing Apps at basic level. For robust developement, developers continue to support the development and provide packages that are made available to the nodejs developer community. 
+This repository of Nodejs packages are called as NPM. Node Package Manager. NPM is a large repository based on Github to provide prebuilt packages for the nodejs developer community. 
+As a developer, U can also contribute towards the package developement. There are packages available for all kinds of application developement support: Internet, IoT, Smart Devices, Media and many more. This repository is Open source and any one can access or contribute to the development of newer packages.
+Express is one such Npm package available for the developers to create web related applications in a faster and easier manner.  
+Features:
+Its faster development and moderate framework.(It is niether small nor big). U can assume Express is an additional layer above nodejs on which UR Applications are created. 
+Purpose is to create SPAs(Single Page Applications)
+It allows to create Middlewares to inject extra features(logic) into the App pipeline.
+It has its own routing table where URLs can be designed in a certain pattern.
+It allows to create dynamic web pages based on the arguments u pass thro the URL.
+
+NPM is defaultly installed in UR machines when NODEJS was installed. 
+Install the express using an npm command:
+npm install express --save
+When this command is executed from the Cmd, it creates a package.json file and a folder called node_modules where express package and its dependencies will be installed and developers can consume that module in their application.

@@ -1,0 +1,27 @@
+div{
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    background-color: lightgreen;
+    color: darkgreen;
+    width: 35%;
+}
+.nav{
+    float:left;
+    width:150px;
+    height:1000px;
+    background: darkslategrey;
+    color:ivory;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+a{
+    display: block;
+    width: 100px;
+    height: 25px;
+    color:aqua;
+    background-color: green;
+    padding: 10px;
+    margin: 10px;
+}

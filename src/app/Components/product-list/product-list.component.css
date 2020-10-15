@@ -1,0 +1,13 @@
+img{ 
+    width: 150px;
+    height: 170px;
+    margin: 10px;
+    float:left;
+}
+
+.detail{
+    min-height: 170px;
+    margin-left :160px;
+    padding : 5px;
+    vertical-align: top;
+}
